@@ -61,13 +61,13 @@ module.exports = {
       URL2: JSON.stringify(path.join(process.cwd(), 'c-test/LiquidCrystal.h')),
       URL3: JSON.stringify(path.join(process.cwd(), 'c-test/main.c')),
       content1: JSON.stringify(
-        fs.readFileSync(path.join(process.cwd(), 'c-test/LiquidCrystal.c'), {encoding: 'utf-8'}),
+        fs.readFileSync(path.join(process.cwd(), 'c-test/main.c'), {encoding: 'utf-8'}),
       ),
       content2: JSON.stringify(
         fs.readFileSync(path.join(process.cwd(), 'c-test/LiquidCrystal.h'), {encoding: 'utf-8'}),
       ),
       content3: JSON.stringify(
-        fs.readFileSync(path.join(process.cwd(), 'c-test/main.c'), {encoding: 'utf-8'}),
+        fs.readFileSync(path.join(process.cwd(), 'c-test/LiquidCrystal.c'), {encoding: 'utf-8'}),
       ),
       URL4: JSON.stringify(path.join(process.cwd(), 'm-test/a.m')),
     }),

@@ -2,7 +2,7 @@
   "name": "dc",
   "version": "1.0.0",
   "description": "",
-  "main":"index.js",
+  "main": "index.js",
   "scripts": {
     "start:server": "node dist/server.js",
     "start:mserver": "node dist/mserver.js",
@@ -59,6 +59,7 @@
     "vscode-uri": "^3.0.8",
     "vscode-ws-jsonrpc": "^3.1.0",
     "which": "^4.0.0",
+    "write-file-webpack-plugin": "^4.5.1",
     "ws": "^8.14.2",
     "yargs": "^17.5.1"
   },

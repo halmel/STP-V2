@@ -7,53 +7,133 @@
   </head>
   <style>
     * {
-    box-sizing: border-box;
-  }
-  html,
-  body {
-    margin: 0;
-    height: 100%;
-  }
-  #root {
-    height: 100%;
-  }
-  .collapse{
-    display: block;
-    height: 8rem;
-  }
-  .nav-button{
-    border-radius: 0px;
-  }
-  .title{
-    display: flex;
-    width: 100%;
-    height: 4rem;
-    background-color:rgb(0, 129, 132);
-    font-weight:bolder;
-    font-size: xx-large;
-    color: white;
-    border: 0px solid transparent;
-    border-radius: 1rem;
-    justify-content: center;
-    justify-items: center;
-    
-  }
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      margin: 0;
+      height: 100%;
+    }
+    #root {
+      height: 100%;
+    }
+    .collapse {
+      display: block;
+      height: 8rem;
+    }
+    .tablinks {
+      font-size: small !important;
+      width: 100/6%;
+      border-radius: 0px;
+    }
+    .title {
+      display: flex;
+      width: 100%;
+      height: 4rem;
+      background-color: rgb(0, 129, 132);
+      font-weight: bolder;
+      font-size: xx-large;
+      color: white;
+      justify-content: center;
+      justify-items: center;
+    }
+    .tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+    .tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+    .tab button.active {
+  background-color: #ccc;
+}
+.tab button:hover {
+  background-color: #ddd;
+}
+.tabcontent {
+  height: 80vh;
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
   </style>
   <body>
-    <div style="display: flex; height: 100%; width: 100%;padding: 0.5 rem;">
-    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 35% !important;">
-        <span class="title">Placeholder</span>
-      <div style="display: flex; justify-content: stretch;">
-      <button href="#" class="nav-button">Overview</button>
-      <button href="#" class="nav-button">Updates</button>
-      <button href="#" class="nav-button">Reports</button>
-      <button href="#" class="nav-button">Overview</button>
-      <button href="#" class="nav-button">Updates</button>
-      <button href="#" class="nav-button">Reports</button>
-      <label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="cb3"></label>
+    <div style="display: flex; height: 100vh; width: 100%; padding: 0.5 rem">
+      <div
+        class="d-flex flex-column flex-shrink-0 p-3 bg-light"
+        style="width: 35% !important; height: 100vh;"
+        
+      >
+        <span class="title" style="height: 4rem;">Placeholder</span>
+        <div style="display: flex; justify-content: stretch; height: 3rem;" class="tab">
+          <button class="tablinks" onclick="openTuto(event, '1')">Basics</button>
+          <button class="tablinks" onclick="openTuto(event, '2')">First Projects</button>
+          <button class="tablinks" onclick="openTuto(event, '3')">intermediate Projects</button>
+          <button class="tablinks" onclick="openTuto(event, '4')">Advanced Projects</button>
+          <button class="tablinks" onclick="openTuto(event, '5')">Real-live Example Projects</button>
+          <button class="tablinks" onclick="openTuto(event, '6')">Settings</button>
+        </div>
+        <div style="height: 84.9vh; background-color:#ccc;">
+          <div id="1" class="tabcontent">
+            <h3>Basics</h3>
+            <h4>Example Code</h4>
+            <button id="replace-button-1">
+              void setup() {  // initialize digital pin 13 as an output.
+              pinMode(2, OUTPUT);
+           }
+           
+           // the loop function runs over and over again forever
+           
+           void loop() {
+              digitalWrite(2, HIGH); // turn the LED on (HIGH is the voltage level)
+              delay(1000); // wait for a second
+              digitalWrite(2, LOW); // turn the LED off by making the voltage LOW
+              delay(1000); // wait for a second
+           }
+          </button>
+          </div>
+          
+          <div id="2" class="tabcontent">
+            <button id="replace-button-2">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, debitis accusamus, natus autem voluptatibus eum reiciendis labore consequatur repudiandae dicta quos eius. Laudantium magnam deleniti quidem, corrupti labore dolore maxime.
+          </button>
+          </div>
+          
+          <div id="3" class="tabcontent">
+            <button id="replace-button-3">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt, debitis accusamus, natus autem voluptatibus eum reiciendis labore consequatur repudiandae dicta quos eius. Laudantium magnam deleniti quidem, corrupti labore dolore maxime.
+          </button>
+          </div>
+        </div>
+      </div>
+      <div id="root" style="width: 85% !important"></div>
     </div>
-    </div>
-    <div id="root" style="width: 65% !important;"></div>
-  </div>
+
+
+
+
+    <script>
+      function openTuto(evt, tutoName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tutoName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      </script>
   </body>
 </html>
